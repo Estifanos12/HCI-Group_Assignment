@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'Cera Round Pro';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('./fonts/FONTSPRINGDEMO-CeraRoundProRegular.woff');
+}
+
+@font-face {
+  font-family: 'Cera Round Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('./fonts/FONTSPRINGDEMO-CeraRoundProMediumRegular.woff');
+}
+
+@font-face {
+  font-family: 'Cera Round Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('./fonts/FONTSPRINGDEMO-CeraRoundProBold.woff');
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Cera Round Pro', sans-serif;
+  font-size: 1.5rem;
+  background-color: #0e1218;
+}
+
+/* Reset */
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+.txtarea:focus,
+.inp:focus {
+  outline: 2px solid hsl(41, 100%, 49%);
+  color: black !important;
+}
+
+/* Background images and blur */
+.backdrop-filter {
+  backdrop-filter: blur(1em);
+}
+.bg-image,
+.about-bg-image,
+.contact-bg-image,
+.footer-bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.bg-image {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.9) 100%
+    ),
+    url('./images/bg.jpg');
+  background-attachment: fixed;
+}
+.register-bg-image {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.75) 100%
+    ),
+    url('./images/backdrop/registerBG.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: max(100vh, 500px);
+}
+.about-bg-image {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.9) 100%
+    ),
+    url('./images/backdrop/about.webp');
+}
+.contact-bg-image {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.134) 100%
+    ),
+    url('./images/backdrop/contact.jpg');
+}
+.footer-bg-image {
+  background-image: url('./images/backdrop/features.jpg');
+}
+
+/* width and height */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0e1218;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(41, 100%, 49%);
+  border-radius: 10px;
+}
+
+/* Utilities */
+.none {
+  display: none;
+}
+.font-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.font-courier {
+  font-family: 'Courier New', Courier, monospace;
+}
+.selected {
+  background-color: hsl(41, 100%, 49%);
+  color: white;
+}
+.text-justify {
+  text-align: justify;
+}
+.btn-large {
+  padding: 1em 2.75em;
+}
+
+.hero-padding {
+  padding: 12em 2em;
+}
+
+.flex-basis {
+  flex: 1 0 25%;
+}
+
+.bg-color {
+  background-color: #0e1218;
+}
+.bg-input {
+  background-color: hsl(255, 11%, 14%);
+}
+
+.yellow {
+  color: hsl(41, 100%, 49%);
+}
+
+.bg-yellow {
+  background-color: hsl(41, 100%, 49%);
+}
+
+@media screen and (max-width: 48em) {
+  .flex-basis {
+    flex: 1 0 40%;
+  }
+}
+@media screen and (max-width: 36em) {
+  .flex-basis {
+    flex: 1 0 50%;
+  }
+  .hero-padding {
+    padding: 12em 0;
+  }
+}

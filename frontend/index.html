@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get list of upcoming, trending and popular movies"
+    />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./global.css" />
+    <script defer src="./js/logout.js"></script>
+    <script defer src="./js/check.js"></script>
+    <script defer src="./js/fetchMovies.js"></script>
+    <script defer src="./js/movie-add.js"></script>
+    <script defer src="./js/home.js"></script>
+    <title>Movie Watch</title>
+  </head>
+  <body class="text-white">
+    <header class="bg-image">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-md navbar-dark border border-3 border-warning border-top-0 rounded-bottom backdrop-filter"
+        >
+          <div
+            class="container py-2 d-flex justify-content-between align-items-center"
+          >
+            <a href="./index.html" class="navbar-brand fw-bold fs-2"
+              ><span class="yellow">Movie</span> <span class=""> Watch</span></a
+            >
+
+            <button
+              class="navbar-toggler border border-warning btn-outline-warning"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Expand Menu"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul
+                class="navbar-nav gap-4 text-center align-items-center ms-auto fs-5 fw-light"
+              >
+                <li class="nav-item p-1 p-md-0">
+                  <a href="./popular.html" class="link-light fs-6 fst-normal"
+                    >Popular</a
+                  >
+                </li>
+                <li class="nav-item p-1 p-md-0">
+                  <a href="./trending.html" class="link-light fs-6 fst-normal"
+                    >Trending</a
+                  >
+                </li>
+                <li class="nav-item p-1 p-md-0">
+                  <a href="./about.html" class="link-light fs-6 fst-normal"
+                    >About</a
+                  >
+                </li>
+                <li class="nav-item p-1 p-md-0">
+                  <a href="./contact.html" class="link-light fs-6 fst-normal"
+                    >Contact</a
+                  >
+                </li>
+                <li
+                  class="nav-item p-2 bg-color rounded-3 bg-yellow"
+                  title="Logout"
+                >
+                  <button
+                    id="logout-btn"
+                    class="btn btn-sm link-light fs-6 fst-normal"
+                  >
+                    <img
+                      src="./images/logout.svg"
+                      width="35"
+                      height="20"
+                      alt=""
+                    />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="hero-container hero-padding d-flex flex-column justify-content-center"
+        >
+          <h1 class="yellow fs-1 fw-bold">Watch Movies</h1>
+          <p class="fs-5 fw-normal">
+            Over millions of movies. Explore all now.
+          </p>
+
+          <form action="./search.html" method="get" class="d-flex gap-3">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search for movie"
+              class="form-control w-75 fs-6 fw-normal text-dark rounded-2 border-0 inp"
+            />
+            <button
+              type="submit"
+              class="btn btn-outline-warning border-3 py-3 px-2 px-sm-3 px-md-5 rounded-0 rounded-end fw-normal fs-6"
+              aria-label="Search for movie by title"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main class="my-3 my-md-5">
+      <section class="container py-4">
+        <h2 class="py-2">Upcoming Movies</h2>
+        <ul id="upcoming-movies" class="d-flex gap-3 overflow-auto p-4">
+          <!--<li>
+           
+            This content will be generated dynamically using javascript 
+          
+            <a href="/description.html">
+             ] <img src="" alt="">
+                <div class="movie-card-title">
+                  <h2>Movie Title</h2>
+                  <p>VOTE</p>
+                </div>
+            </a>
+          </li>-->
+        </ul>
+      </section>
+      <section class="container text- py-5">
+        <div class="row gap-5 align-items-stretch">
+          <table id="popular-table" class="table-sm col-10 col-md-5 mx-auto">
+            <thead class="bg-yellow text-dark fw-bold fs-3">
+              <tr>
+                <th scope="col" colspan="3" class="p-3 text-center">
+                  Popular Movies
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <table id="trending-table" class="table-sm col-10 col-md-5 mx-auto">
+            <thead class="bg-yellow text-dark fw-bold fs-3">
+              <tr>
+                <th scope="col" colspan="3" class="p-3 text-center">
+                  Trending Movies
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+      <section class="container py-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="py-2">Trending Movies</h2>
+          <a
+            href="./trending.html"
+            class="yellow text-decoration-underline link-light fs-5"
+            aria-label="explore more on popular movies"
+            >Explore now</a
+          >
+        </div>
+        <ul id="trending-movies" class="row py-4 px-0">
+          <!--<li>
+           
+            This content will be generated dynamically using javascript 
+          
+            <a href="/description.html">
+             ] <img src="" alt="">
+                <div class="movie-card-title">
+                  <h2>Movie Title</h2>
+                  <p>VOTE</p>
+                </div>
+            </a>
+          </li>-->
+        </ul>
+      </section>
+      <section class="container py-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="py-2">Popular Movies</h2>
+          <a
+            href="./popular.html"
+            class="yellow text-decoration-underline link-light fs-5"
+            aria-label="explore more on popular movies"
+            >Explore now</a
+          >
+        </div>
+        <ul id="popular-movies" class="row py-4 px-0">
+          <!--<li>
+           
+            This content will be generated dynamically using javascript 
+          
+            <a href="/description.html">
+             ] <img src="" alt="">
+                <div class="movie-card-title">
+                  <h2>Movie Title</h2>
+                  <p>VOTE</p>
+                </div>
+            </a>
+          </li>-->
+        </ul>
+      </section>
+    </main>
+    <footer class="footer-bg-image">
+      <div
+        class="container py-5 d-flex align-items-end justify-content-between"
+      >
+        <div>
+          <a href="./index.html" class="fw-bold link-light fs-2"
+            >Movies Watch</a
+          >
+          <p class="fs-6">Copyright &copy; 2022 Movies Watch</p>
+        </div>
+        <nav>
+          <ul class="d-flex flex-column gap-2 fs-6 fw-normal">
+            <li><a href="./index.html" class="link-light">Home</a></li>
+            <li>
+              <a href="./popular.html" class="link-light">Popular</a>
+            </li>
+            <li>
+              <a href="./trending.html" class="link-light">Trending</a>
+            </li>
+            <li><a href="./about.html" class="link-light">About</a></li>
+            <li>
+              <a href="./contact.html" class="link-light">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav>
+        <ul
+          class="d-flex align-items-center justify-content-center gap-2 bg-yellow p-2 m-0"
+        >
+          <li>
+            <a href="https://facebook.com"
+              ><img
+                src="./images/facebook.svg"
+                alt="facebook"
+                width="50"
+                height="50"
+            /></a>
+          </li>
+          <li>
+            <a href="https://instagram.com">
+              <img
+                src="./images/instagram.svg"
+                alt="instagram"
+                width="50"
+                height="50"
+            /></a>
+          </li>
+          <li>
+            <a href="https://telegram.org"
+              ><img
+                src="./images/telegram.svg"
+                alt="telegram"
+                width="50"
+                height="50"
+            /></a>
+          </li>
+          <li>
+            <a href="https://twitter.com">
+              <img
+                src="./images/twitter.svg"
+                alt="twitter"
+                width="50"
+                height="50"
+                title="twitter"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
