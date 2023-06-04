@@ -1,0 +1,84 @@
+.secondModal {
+  position: fixed;
+  padding: 10px 50px;
+  top: 50%;
+  left: 50%;
+  margin-left: -20vw;
+  margin-top: -18vh;
+  opacity: 0;
+
+  border-radius: 15px;
+  z-index: 5;
+  width: 40vw;
+  height: 36vh;
+  transition: all 200ms ease;
+  align-items: center;
+
+  text-align: center;
+  background-color: #0e1218;
+  border: 2px solid hsl(41, 100%, 49%);
+}
+
+.secondModal.active {
+  opacity: 1;
+}
+
+.smallSecond {
+  margin-bottom: 50px;
+}
+
+h5#warning {
+  color: #fff;
+  font-size: 23px;
+}
+
+div.modalButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button#ok {
+  width: 25%;
+  background: transparent;
+  border: 1px solid hsl(41, 100%, 49%);
+  padding: 10px;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 23px;
+}
+
+/* .secondModal button {
+  background-color: hsl(41, 100%, 49%);
+  border: 1px solid white;
+  width: 35%;
+  box-shadow: 1px 2px 2px black;
+  color: white;
+  font-size: medium;
+} */
+
+#smallDel {
+  position: relative;
+  margin-left: 100%;
+
+  padding: 10px;
+
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  background-color: rgb(5, 5, 5);
+  opacity: 0.8;
+  transform: scale(0);
+  transition: ease-in 10ms;
+  z-index: 1;
+}
+
+.overlay.open {
+  transform: scale(1);
+}

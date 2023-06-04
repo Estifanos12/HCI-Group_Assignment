@@ -62,7 +62,7 @@ async function init() {
         form.classList.add("none");
         document.getElementById("sign-up-success").classList.remove("none");
         setTimeout(() => {
-          window.location.replace("http://127.0.0.1:5500/login.html");
+          window.location.replace("http://127.0.0.1:5501/login.html");
         }, 3000);
       } else {
         usernameExist.classList.remove("none");

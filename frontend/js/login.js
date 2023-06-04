@@ -22,7 +22,7 @@ async function init() {
     const data = await logIn(payload);
     if (data?.accessToken) {
       localStorage.setItem("token", data.accessToken);
-      window.location.replace("http://127.0.0.1:5500/index.html");
+      window.location.replace("http://127.0.0.1:5501/index.html");
     } else {
       errorMsg.classList.remove("none");
     }

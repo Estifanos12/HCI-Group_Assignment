@@ -1,5 +1,5 @@
 if (!localStorage.getItem("token")) {
-  window.location.replace(`http://127.0.0.1:5500/login.html`);
+  window.location.replace(`http://127.0.0.1:5501/login.html`);
 }
 const token = localStorage.getItem("token");
 const response = fetch(`http://127.0.0.1:3000/auth/check`, {
@@ -15,6 +15,6 @@ const response = fetch(`http://127.0.0.1:3000/auth/check`, {
   .then((data) => {
     if (!data.response) {
       localStorage.removeItem("token");
-      window.location.replace(`http://127.0.0.1:5500/login.html`);
+      window.location.replace(`http://127.0.0.1:5501/login.html`);
     }
   });
